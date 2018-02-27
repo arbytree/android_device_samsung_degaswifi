@@ -16,7 +16,7 @@
 # limitations under the License.
 
 VENDOR=samsung
-COMMON=espresso-common
+COMMON=degas-common
 COMMONOUTDIR=vendor/$VENDOR/$COMMON
 COMMONBASE=../../../$COMMONOUTDIR/proprietary
 COMMONMAKEFILE=../../../$COMMONOUTDIR/common-vendor-blobs.mk
@@ -62,7 +62,7 @@ for FILE in `cat $COMMONPROPS | grep -v ^# | grep -v ^$`; do
     if [ $COUNT = "0" ]; then
         LINEEND=""
     fi
-    echo "    \vendor/samsung/espresso-common/proprietary/$FILE:$FILE$LINEEND" >> $COMMONMAKEFILE
+    echo "    \vendor/samsung/degas-common/proprietary/$FILE:$FILE$LINEEND" >> $COMMONMAKEFILE
 done
 
 
