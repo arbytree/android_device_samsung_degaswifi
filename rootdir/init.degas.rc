@@ -1,6 +1,6 @@
 import init.omap4.rc
-import init.espresso.sensors.rc
-import init.espresso.usb.rc
+import init.degas.sensors.rc
+import init.degas.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
