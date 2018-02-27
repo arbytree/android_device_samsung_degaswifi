@@ -15,7 +15,7 @@
 #
 
 # Inherit LineageOS specific board config
--include device/samsung/espressowifi/BoardConfigCustom.mk
+-include device/samsung/degaswifi/BoardConfigCustom.mk
 
 # Inherit common omap4 board config
 -include hardware/ti/omap4/BoardConfigCommon.mk
@@ -25,25 +25,24 @@
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := piranha
+TARGET_BOOTLOADER_BOARD_NAME := PXA1088
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/ti/omap4
-TARGET_KERNEL_CONFIG := espresso_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/degaswifi
+TARGET_KERNEL_CONFIG := degaswifi_defconfig
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x40000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=espresso
+BOARD_KERNEL_CMDLINE := androidboot.hardware=degaswifi
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_CACHEIMAGE_PARTITION_SIZE := 734003200
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 5003787264
-BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_BOOTIMAGE_PARTITION_SIZE := 12582912
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2224029696
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 5230297088
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Disable dex-preoptimization
 WITH_DEXPREOPT := false
@@ -70,13 +69,13 @@ WIFI_BAND                        := 802_11_ABG
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/espressowifi/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/degaswifi/bluetooth
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/espressowifi/sepolicy
+    device/samsung/degaswifi/sepolicy
 
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
-TARGET_RECOVERY_FSTAB := device/samsung/espressowifi/rootdir/fstab.espresso
+TARGET_RECOVERY_FSTAB := device/samsung/degaswifi/rootdir/fstab.degas
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
