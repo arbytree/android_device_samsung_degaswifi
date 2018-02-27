@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/espressowifi
+LOCAL_PATH := device/samsung/degaswifi
 
 TARGET_BOARD_OMAP_CPU := 4430
 
@@ -22,7 +22,7 @@ TARGET_BOARD_OMAP_CPU := 4430
 $(call inherit-product, hardware/ti/omap4/omap4.mk)
 
 # Include LineageOS specific additions
-$(call inherit-product, device/samsung/espressowifi/device-custom.mk)
+$(call inherit-product, device/samsung/degaswifi/device-custom.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay/aosp-common
@@ -32,14 +32,14 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.espresso.rc:root/init.espresso.rc \
-    $(LOCAL_PATH)/rootdir/init.espresso.sensors.rc:root/init.espresso.sensors.rc \
-    $(LOCAL_PATH)/rootdir/init.espresso.usb.rc:root/init.espresso.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.espresso.rc:root/ueventd.espresso.rc
+    $(LOCAL_PATH)/rootdir/init.degas.rc:root/init.degas.rc \
+    $(LOCAL_PATH)/rootdir/init.degas.sensors.rc:root/init.degas.sensors.rc \
+    $(LOCAL_PATH)/rootdir/init.degas.usb.rc:root/init.degas.usb.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.degas.rc:root/ueventd.degas.rc
 
 # Fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.espresso:root/fstab.espresso
+    $(LOCAL_PATH)/rootdir/fstab.degas:root/fstab.degas
 
 # GPS
 # gps config appropriate for this device
@@ -139,6 +139,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-flags=--no-watch-dog
 
-$(call inherit-product-if-exists, vendor/samsung/espresso-common/espresso-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/degas-common/degas-common-vendor.mk)
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
