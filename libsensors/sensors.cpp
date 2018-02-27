@@ -232,20 +232,20 @@ sensors_poll_context_t::sensors_poll_context_t()
     char device[16];
     FILE *f = fopen(DEVICE_VARIANT_SYSFS, "r");
     if (!f || fgets(device, 16, f) == NULL) {
-        ALOGE("Failed to read " DEVICE_VARIANT_SYSFS ", assuming P51xx\n");
-        strcpy(device, "espresso10");
+        ALOGE("Failed to read " DEVICE_VARIANT_SYSFS ", assuming T23xx\n");
+        strcpy(device, "degas");
     }
     if (f)
         fclose(f);
 
     ALOGD("Device: %s", device);
 
-    if (strcmp(device, "espressowifi") == 0) {
+    if (strcmp(device, "degaswifi") == 0) {
         /* Device is P3110 */
         sSensorList[3].name = "AL3201 Light Sensor";
         sSensorList[3].vendor = "Lite-On";
         lightSensorType = SENSOR_TYPE_AL3201;
-    } else if (strcmp(device, "espresso") == 0) {
+    } else if (strcmp(device, "degas") == 0) {
         /* Device is P3100 */
         sSensorList[3].name = "GP2AP002 Light Sensor";
         sSensorList[3].vendor = "Sharp";
