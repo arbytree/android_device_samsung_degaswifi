@@ -15,23 +15,23 @@
 #
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 480
-TARGET_SCREEN_WIDTH := 600
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
 
 # Inherit common LineageOS configuration
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
 # LineageOS specific overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/espressowifi/overlay/custom-common
+DEVICE_PACKAGE_OVERLAYS += device/samsung/degaswifi/overlay/lineage-common
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/espressowifi/aosp_espressowifi.mk)
+$(call inherit-product, device/samsung/degaswifi/aosp_degaswifi.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_espressowifi
+PRODUCT_NAME := lineage_degaswifi
 
 # Device build info and fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=espresso10wifixx \
-    BUILD_FINGERPRINT="samsung/espresso10wifixx/espresso10wifi:4.2.2/JDQ39/P5110XXDML1:user/release-keys" \
-    PRIVATE_BUILD_DESC="espresso10wifixx-user 4.2.2 JDQ39 P5110XXDML1 release-keys"
+    BUILD_FINGERPRINT="samsung/degaswifiue/degaswifiue:4.4.4/KTU84Q/T230NUUEU0APA1:user/release-keys" \
+    PRIVATE_BUILD_DESC="degaswifiue-user 4.4.4 KTU84Q T230NUUEU0APA1 release-keys"
