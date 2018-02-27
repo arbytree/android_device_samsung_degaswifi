@@ -15,9 +15,9 @@
 #
 
 # Include common device configuration
-$(call inherit-product, device/samsung/espressowifi/device-common.mk)
+$(call inherit-product, device/samsung/degaswifi/device-common.mk)
 
-LOCAL_PATH := device/samsung/espressowifi
+LOCAL_PATH := device/samsung/degaswifi
 
 # This is a wifi-only device
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -30,8 +30,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Audio configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio/tiny_hw_espressowifi.xml:system/etc/sound/espressowifi \
-    $(LOCAL_PATH)/audio/tiny_hw_espresso10wifi.xml:system/etc/sound/espresso10wifi
+    $(LOCAL_PATH)/audio/tiny_hw_degaswifi.xml:system/etc/sound/degaswifi \
 
 # IR
 PRODUCT_PACKAGES += \
