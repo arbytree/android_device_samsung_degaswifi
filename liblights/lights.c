@@ -133,7 +133,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "Galaxy Tab 2 Lights Module",
+    .name = "Galaxy Tab 4 Lights Module",
     .author = "The CyanogenMod Project",
     .methods = &lights_module_methods,
 };
