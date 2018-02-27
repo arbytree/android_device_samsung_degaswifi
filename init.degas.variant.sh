@@ -10,7 +10,7 @@ if [ -f "$DEVICE" ]
 then
   variant=`cat $DEVICE`
   case "$variant" in
-      "espresso" | "espressowifi")
+      "espresso" | "degaswifi")
             # set p31xx to portrait mode
             setprop ro.sf.hwrotation 270
 
